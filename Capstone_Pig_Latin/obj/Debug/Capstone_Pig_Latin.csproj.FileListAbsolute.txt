@@ -1,0 +1,6 @@
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/obj/Debug/Capstone_Pig_Latin.csprojAssemblyReference.cache
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/obj/Debug/Capstone_Pig_Latin.csproj.CoreCompileInputs.cache
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/bin/Debug/Capstone_Pig_Latin.exe
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/bin/Debug/Capstone_Pig_Latin.pdb
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/obj/Debug/Capstone_Pig_Latin.exe
+/Users/katedatema/Projects/Capstone_Pig_Latin/Capstone_Pig_Latin/obj/Debug/Capstone_Pig_Latin.pdb

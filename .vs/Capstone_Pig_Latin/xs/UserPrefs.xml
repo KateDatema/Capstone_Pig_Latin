@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{3A6CEB48-B047-482B-A0B5-F0C303DF549E}|Default">
+  <MonoDevelop.Ide.ItemProperties.Capstone__Pig__Latin PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Capstone_Pig_Latin/Program.cs">
+    <Files>
+      <File FileName="Capstone_Pig_Latin/Program.cs" Line="50" Column="82" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Capstone_Pig_Latin" expanded="True">
+            <Node name="Capstone_Pig_Latin" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
