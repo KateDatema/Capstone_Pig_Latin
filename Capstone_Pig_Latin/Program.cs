@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Capstone_Pig_Latin
 {
@@ -21,20 +22,19 @@ namespace Capstone_Pig_Latin
         public static string Translating(string userInput)
         {
             string vowels = "aeiou";
-            //This is where we will keep our new words
+            //This is where we will keep our new word
             string newWord = "null";
+
 
 
             foreach (string word in userInput.Split( ))
             {
                 //getting th first letter by indexing it 
                 string firstLetter = userInput.Substring(0, 1);
-                //
-                string restOfWord = userInput.Substring(1, userInput.Length - 1);
                 //compare the first later to vowels, IndexOf will return -1 you try to look up something and it's not found
                 int currentLetter = vowels.IndexOf(firstLetter);
-                //to count our loops
-                int i = 0;
+                bool find = false;
+                int index = -1;
 
                 //So if the first letter is not -1 it must be a vowel, there for we can go ahead and add "way to the end"
                 if (currentLetter > -1)
@@ -43,22 +43,34 @@ namespace Capstone_Pig_Latin
                 }
                 else
                 {
-                    //we will loop through the word while the currently letter is not a vowel
-                    while (currentLetter> -1)
+                    char[] wordBroken = word.ToArray();
+                   
+
+                    while (find == false)
                     {
-                        //we will count our loops so we can change what letter we are on, and so we know what letter it stops on
-                        string goingThoughLetters = userInput.Substring(i,(i+1));
-                        currentLetter = vowels.IndexOf(goingThoughLetters);
-                        i++;
-                        Console.Write(i);
-                        string backSide = word.Substring(0, i);
-                        string frontSide = word.Substring(i, word.Length);
-                        newWord = frontSide+backSide;
-
-
+                        
+                        foreach (char letter in wordBroken)
+                        {
+                            currentLetter = vowels.IndexOf(letter);
+                            index++;
+                            if (currentLetter > -1)
+                            {
+                                find = true;
+                                break;
+                            }
+                            else
+                                continue;
+                        }
                     }
+
+                    string backSide = word.Substring(0, index);
+                    string frontSide = word.Substring(index, word.Length-1);
+                    newWord = frontSide + backSide + "ay";
+
+                }
             }
-            return newWord;
+            string newSentace = " " + newWord;
+            return newSentace;
 
         }
 
