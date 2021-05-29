@@ -11,19 +11,35 @@ namespace Capstone_Pig_Latin
             while (goOn == true)
             {
                 string userInput = GetUserInput("word or sentence");
-                
-                string giveBack = Translating(userInput);
+                userInput = userInput.ToLower();
 
-                Console.WriteLine(giveBack);
+                int result = 0;
+                string giveBack;
+
+                if (int.TryParse(userInput, out result))
+                {
+                    Console.WriteLine("Your input {0} is a number, input text only next time.");
+                    userInput = GetUserInput("word or sentence");
+                    Console.WriteLine(Translating(userInput));
+
+                }
+                else
+                {
+                    giveBack = Translating(userInput);
+                    Console.WriteLine(giveBack);
+                }
+
 
                 goOn = GetContinue();
             }
 
         }
 
-        // method for Pig Latin
+        
+      
+// method for Pig Latin
 
-        public static string Translating(string userInput)
+public static string Translating(string userInput)
         {
             string vowels = "aeiou";
             //This is where we will keep our new word
