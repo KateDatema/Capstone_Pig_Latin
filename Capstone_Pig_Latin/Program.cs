@@ -6,8 +6,7 @@ namespace Capstone_Pig_Latin
     class MainClass
     {
         public static void Main(string[] args)
-        {
-            //note to future self, for some reason it's breaking when I have a space at the end.. Not sure why that is. 
+        { 
             bool goOn = true;
             while (goOn == true)
             {
@@ -20,8 +19,7 @@ namespace Capstone_Pig_Latin
 
                 bool resultOfChar = userInput.All(c => Char.IsLetter(c) || c == ' '); ;
 
-                //Note to self: need to do more reserach on TryParse(), currently it breaks if I enter in a double, maybe make another else if statemtn to check for doubles?
-                //this if else statement is to check if the input is a number or text, again need to update this to make it work better.   
+            
                 if (resultOfChar == false)
                 {
                     while (userInput.All(c => Char.IsLetter(c) || c == ' ')== false)
