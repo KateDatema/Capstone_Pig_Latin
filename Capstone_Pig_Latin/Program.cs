@@ -18,9 +18,9 @@ namespace Capstone_Pig_Latin
 
                 if (int.TryParse(userInput, out result))
                 {
+                    while (int.TryParse(userInput, out result))
                     Console.WriteLine("Your input {0} is a number, input text only next time.");
                     userInput = GetUserInput("word or sentence");
-                    Console.WriteLine(Translating(userInput));
 
                 }
                 else
@@ -45,12 +45,13 @@ public static string Translating(string userInput)
             //This is where we will keep our new word
             string newWord;
             string newSentence = "This is your translated input:";
+            string[] sentenceBroken = userInput.Split().ToArray();
 
 
-            foreach (string word in userInput.Split( ))
+            foreach (string word in sentenceBroken)
             {
                 //getting th first letter by indexing it 
-                string firstLetter = userInput.Substring(0, 1);
+                string firstLetter = word.Substring(0, 1);
                 //compare the first later to vowels, IndexOf will return -1 you try to look up something and it's not found
                 int currentLetter = vowels.IndexOf(firstLetter);
                 bool find = false;
@@ -62,6 +63,7 @@ public static string Translating(string userInput)
                 {
                     newWord = word + "way ";
                     newSentence += " " + newWord;
+        
                 }
                 else
                 {
