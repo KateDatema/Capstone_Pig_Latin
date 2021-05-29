@@ -7,22 +7,26 @@ namespace Capstone_Pig_Latin
     {
         public static void Main(string[] args)
         {
+            //note to future self, for some reason it's breaking when I have a space at the end.. Not sure why that is. 
             bool goOn = true;
             while (goOn == true)
             {
                 string userInput = GetUserInput("word or sentence");
                 userInput = userInput.ToLower();
+                userInput = userInput.Trim();
 
-                int result = 0;
+                
                 string giveBack;
 
-                //Note to self: need to do more reserach on TryParse(), currently it breaks if I enter in a double
+                bool resultOfChar = userInput.All(c => Char.IsLetter(c) || c == ' '); ;
+
+                //Note to self: need to do more reserach on TryParse(), currently it breaks if I enter in a double, maybe make another else if statemtn to check for doubles?
                 //this if else statement is to check if the input is a number or text, again need to update this to make it work better.   
-                if (int.TryParse(userInput, out result))
+                if (resultOfChar == false)
                 {
-                    while (int.TryParse(userInput, out result))
+                    while (userInput.All(c => Char.IsLetter(c) || c == ' ')== false)
                     {
-                        Console.WriteLine("Your input {0} is a number, input text only next time.");
+                        Console.WriteLine("Your input has a character that we don't accepted, input text only next time.");
                         userInput = GetUserInput("please enter a word");
                     }
 
@@ -53,13 +57,14 @@ public static string Translating(string userInput)
             string newWord;
             //This is where ALL of our new words will be stored
             string newSentence = "This is your translated input:";
-            //breaking up our sentence into words
+            //breaking up our sentence into words, for some reason it has trouble when there is a space at the end. 
             string[] sentenceBroken = userInput.Split().ToArray();
+          
 
 
             foreach (string word in sentenceBroken)
             {
-                //getting th first letter by indexing it 
+                //getting the first letter by indexing it 
                 string firstLetter = word.Substring(0, 1);
                 //compare the first later to vowels, IndexOf will return -1 you try to look up something and it's not found
                 int currentLetter = vowels.IndexOf(firstLetter);
