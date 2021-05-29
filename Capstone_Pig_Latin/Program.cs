@@ -11,7 +11,11 @@ namespace Capstone_Pig_Latin
             while (goOn == true)
             {
                 string userInput = GetUserInput("word or sentence");
-                Console.WriteLine(Translating(userInput));
+                
+                string giveBack = Translating(userInput);
+
+                Console.WriteLine(giveBack);
+
                 goOn = GetContinue();
             }
 
@@ -23,8 +27,8 @@ namespace Capstone_Pig_Latin
         {
             string vowels = "aeiou";
             //This is where we will keep our new word
-            string newWord = "null";
-
+            string newWord;
+            string newSentence = "This is your translated input:";
 
 
             foreach (string word in userInput.Split( ))
@@ -36,10 +40,12 @@ namespace Capstone_Pig_Latin
                 bool find = false;
                 int index = -1;
 
+
                 //So if the first letter is not -1 it must be a vowel, there for we can go ahead and add "way to the end"
                 if (currentLetter > -1)
                 {
-                    newWord = word + "way";
+                    newWord = word + "way ";
+                    newSentence += " " + newWord;
                 }
                 else
                 {
@@ -65,13 +71,14 @@ namespace Capstone_Pig_Latin
 
                     string backSide = word.Substring(0, index);
                     string frontSide = word.Substring(index, word.Length-1);
-                    newWord = frontSide + backSide + "ay";
-
+                    newWord = frontSide + backSide + "ay" ;
+                    newSentence += " " + newWord;
+      
                 }
+                
             }
-            string newSentace = " " + newWord;
-            return newSentace;
 
+            return newSentence;
         }
 
         //functions for getting user data
