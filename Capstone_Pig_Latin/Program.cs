@@ -16,11 +16,18 @@ namespace Capstone_Pig_Latin
                 int result = 0;
                 string giveBack;
 
+                //Note to self: need to do more reserach on TryParse(), currently it breaks if I enter in a double
+                //this if else statement is to check if the input is a number or text, again need to update this to make it work better.   
                 if (int.TryParse(userInput, out result))
                 {
                     while (int.TryParse(userInput, out result))
-                    Console.WriteLine("Your input {0} is a number, input text only next time.");
-                    userInput = GetUserInput("word or sentence");
+                    {
+                        Console.WriteLine("Your input {0} is a number, input text only next time.");
+                        userInput = GetUserInput("please enter a word");
+                    }
+
+                    giveBack = Translating(userInput);
+                    Console.WriteLine(giveBack);
 
                 }
                 else
@@ -42,9 +49,11 @@ namespace Capstone_Pig_Latin
 public static string Translating(string userInput)
         {
             string vowels = "aeiou";
-            //This is where we will keep our new word
+            //This is where we will keep our new word when the computer is currently working on it 
             string newWord;
+            //This is where ALL of our new words will be stored
             string newSentence = "This is your translated input:";
+            //breaking up our sentence into words
             string[] sentenceBroken = userInput.Split().ToArray();
 
 
@@ -58,18 +67,21 @@ public static string Translating(string userInput)
                 int index = -1;
 
 
-                //So if the first letter is not -1 it must be a vowel, there for we can go ahead and add "way to the end"
+                //If the first letter is not -1 it MUST be a vowel, there for we can go ahead and add "way to the end"
                 if (currentLetter > -1)
                 {
                     newWord = word + "way ";
                     newSentence += " " + newWord;
         
                 }
+                //If it doesn't start with a vowel then.. 
                 else
                 {
+                    //spliting the word into letters
                     char[] wordBroken = word.ToArray();
                    
 
+                    //run this while loop until the computer finds a vowel (it will true find == true when it does, and it will index where its found)
                     while (find == false)
                     {
                         
@@ -86,7 +98,7 @@ public static string Translating(string userInput)
                                 continue;
                         }
                     }
-
+                    //now that we know where our vowels are we can break it on that 
                     string backSide = word.Substring(0, index);
                     string frontSide = word.Substring(index, word.Length-1);
                     newWord = frontSide + backSide + "ay" ;

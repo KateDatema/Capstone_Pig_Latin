@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.Capstone__Pig__Latin PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Capstone_Pig_Latin/Program.cs">
     <Files>
-      <File FileName="Capstone_Pig_Latin/Program.cs" Line="57" Column="32" />
+      <File FileName="Capstone_Pig_Latin/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Capstone_Pig_Latin" expanded="True">
             <Node name="Capstone_Pig_Latin" expanded="True">
+              <Node name="Properties" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
