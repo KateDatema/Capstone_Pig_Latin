@@ -14,7 +14,7 @@ namespace Capstone_Pig_Latin
                 userInput = userInput.ToLower();
                 userInput = userInput.Trim();
 
-                
+
                 string giveBack;
 
                 bool resultOfChar = userInput.All(c => Char.IsLetter(c) || c == ' '); ;
@@ -103,7 +103,7 @@ public static string Translating(string userInput)
                     }
                     //now that we know where our vowels are we can break it on that 
                     string backSide = word.Substring(0, index);
-                    string frontSide = word.Substring(index, word.Length-1);
+                    string frontSide = word.Substring(index);
                     newWord = frontSide + backSide + "ay" ;
                     newSentence += " " + newWord;
       
