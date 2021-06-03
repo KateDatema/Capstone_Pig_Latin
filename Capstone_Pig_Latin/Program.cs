@@ -10,6 +10,7 @@ namespace Capstone_Pig_Latin
             bool goOn = true;
             while (goOn == true)
             {
+                Console.WriteLine("Hello, I am creating a merge conflict");
                 string userInput = GetUserInput("word or sentence");
                 userInput = userInput.ToLower();
                 userInput = userInput.Trim();
